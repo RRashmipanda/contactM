@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-6">
                 {session ? (
                     <>
-                        <Link href="/contact" className="hover:text-blue-400 transition-colors">
+                        <Link href="/contact" className="hover:text-green-400 transition-colors">
                             Contacts
                         </Link>
                         <Logoutbtn />
@@ -21,10 +21,10 @@ const Navbar = () => {
 
                 ) : (
                     <>
-                        <Link href="/login" className="hover:text-blue-400 transition-colors mr-6">
+                        <Link href="/login" className="hover:text-green-400 transition-colors mr-6">
                             Login
                         </Link>
-                        <Link href="/register" className="hover:text-blue-400 transition-colors mr-8">
+                        <Link href="/register" className="hover:text-green-400 transition-colors mr-8">
                             Register
                         </Link>
                     </>
