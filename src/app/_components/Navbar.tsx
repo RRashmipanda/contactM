@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Logoutbtn from './Logoutbtn';
+import { getSession } from '../_lib/session';
 
-const Navbar = () => {
-    const session = false;
+const Navbar = async () => {
+    const session = await getSession();
     return (
         <nav className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
             <div className="text-xl font-bold">

@@ -1,6 +1,6 @@
 "use client";
 
-import { loginAction } from "@/actions/auth";
+import { loginAction } from "@/app/actions/auth";
 
 
 const LoginForm = () => {

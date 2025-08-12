@@ -2,7 +2,8 @@
 
 import axios from "axios";
 import { redirect } from "next/navigation";
-import { UserType } from "@/_types/user";
+import { UserType } from "@/app/_types/user";
+import { deleteSession, setSession } from "../_lib/session";
 
 const API_URL = "http://localhost:3001";
 
@@ -14,6 +15,7 @@ export const loginAction = async (formData : FormData) =>{
         if(!user) throw new Error ("invalid Credentials")
 
             //set user in the cookies
+        await setSession({name:user.name, email:user.email, id:user.id});    
             
     } catch (error) {
         throw new Error("Failed to login")
@@ -22,6 +24,8 @@ export const loginAction = async (formData : FormData) =>{
 };
 
 
-export const logout = async() => {
+export const logoutAction = async() => {
+
+    await deleteSession();
     redirect("/login");
 };
